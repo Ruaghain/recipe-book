@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Recipe} from "../recipes/recipe";
+import {LogService} from '../services/log.service';
+import {DataService} from '../services/data.service';
 
 @Component({
   selector: 'rb-recipes',
@@ -10,7 +12,10 @@ export class RecipesComponent implements OnInit {
 
   selectedRecipe: Recipe;
 
-  constructor() { }
+  constructor(private logService: LogService, private dataService: DataService) {
+    this.logService.writeToLog('Recipes has been created.');
+    this.dataService.addData('Create Recipes Component');
+  }
 
   ngOnInit() {
   }

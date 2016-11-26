@@ -1,18 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.component';
-import { UnlessDirective } from './directives/unless/unless.directive';
-import { DropdownDirective } from './directives/dropdown/dropdown.directive';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './header.component';
+import {RecipesComponent} from './recipes/recipes.component';
+import {RecipeListComponent} from './recipes/recipe-list/recipe-list.component';
+import {RecipeItemComponent} from './recipes/recipe-list/recipe-item.component';
+import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.component';
+import {ShoppingListComponent} from './shopping-list/shopping-list.component';
+import {ShoppingListAddComponent} from './shopping-list/shopping-list-add.component';
+import {UnlessDirective} from './directives/unless/unless.directive';
+import {DropdownDirective} from './directives/dropdown/dropdown.directive';
+import {LogService} from "./services/log.service";
+import {DataService} from "./services/data.service";
+import {RecipeService} from "./services/recipes/recipe.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { DropdownDirective } from './directives/dropdown/dropdown.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LogService, DataService, RecipeService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
