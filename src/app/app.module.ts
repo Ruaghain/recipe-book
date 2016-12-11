@@ -17,6 +17,7 @@ import {LogService} from "./services/log.service";
 import {DataService} from "./services/data.service";
 import {RecipeService} from "./recipes/recipe-service/recipe.service";
 import {ShoppingListService} from "./shopping-list/shopping-list-service/shopping-list.service";
+import {routing} from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {ShoppingListService} from "./shopping-list/shopping-list-service/shoppin
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [
     LogService,
