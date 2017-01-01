@@ -1,11 +1,12 @@
 import {Routes, RouterModule} from "@angular/router";
-import {RecipesComponent} from "./recipes/recipes.component";
+
 import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
-import {RECIPE_ROUTES} from "./recipes/recipe-routes";
+import {HomeComponent} from "./home.component";
 
 const APP_ROUTES: Routes = [
-  {path: '', redirectTo: '/recipes', pathMatch: 'full'},
-  {path: 'recipes', component: RecipesComponent, children: RECIPE_ROUTES},
+  {path: '', component: HomeComponent},
+  //loading of the children needs to point to the directory of the module. Not the routing file.
+  {path: 'recipes', loadChildren: './app/recipes/recipes.module#RecipesModule'},
   {path: 'shopping-list', component: ShoppingListComponent}
 ];
 
